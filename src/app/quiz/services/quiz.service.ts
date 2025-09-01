@@ -4,8 +4,9 @@ import {
   QuestionInterface,
   QuestionsResponse,
 } from '../types';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResourceRef } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { httpResource } from '@angular/common/http';
 
 const URL =
   'https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple&encode=url3986';
@@ -21,6 +22,10 @@ export class QuizService {
     return this.#http
       .get<QuestionsResponse>(URL)
       .pipe(map(this.#questionsMapper));
+  }
+
+  load(): HttpResourceRef<QuestionInterface[] | undefined> {
+    return httpResource<QuestionInterface[]>(() => URL);
   }
 
   #questionsMapper(questions: QuestionsResponse): QuestionInterface[] {
