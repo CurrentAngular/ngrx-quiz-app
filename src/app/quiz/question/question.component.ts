@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AnswerComponent } from '../answer/answer.component';
-import { QuizService } from '../services';
+import { quizStore } from '../store/quiz.store';
 
 @Component({
   selector: 'aq-question',
@@ -9,5 +9,5 @@ import { QuizService } from '../services';
   styleUrl: './question.component.scss',
 })
 export class QuestionComponent {
-  readonly store = inject(QuizService);
+  readonly store = inject(quizStore);
 }

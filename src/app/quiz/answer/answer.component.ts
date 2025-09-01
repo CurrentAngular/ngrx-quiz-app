@@ -1,6 +1,6 @@
 import { Component, computed, inject, input } from '@angular/core';
-import { QuizService } from '../services';
 import { NgClass } from '@angular/common';
+import { quizStore } from '../store/quiz.store';
 
 @Component({
   selector: 'aq-answer',
@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
   imports: [NgClass],
 })
 export class AnswerComponent {
-  readonly store = inject(QuizService);
+  readonly store = inject(quizStore);
 
   readonly answer = input.required<string>();
   readonly index = input.required<number>();

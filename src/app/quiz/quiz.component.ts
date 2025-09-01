@@ -1,8 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { QuestionComponent } from './question/question.component';
-import { QuizService } from './services';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
-import { QuestionInterface } from './types';
 import { ErrorNotification } from './error-notification/error-notification.component';
 import { quizStore } from './store/quiz.store';
 
@@ -12,19 +10,10 @@ import { quizStore } from './store/quiz.store';
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
-export class QuizComponent implements OnInit {
-  readonly store = inject(QuizService);
-  readonly state = inject(quizStore);
+export class QuizComponent {
+  readonly store = inject(quizStore);
 
-  // TODO: try to move into service
-  ngOnInit(): void {
-    this.store.getQuestions().subscribe({
-      next: (questions: QuestionInterface[]) => {
-        this.store.setQuestions(questions);
-      },
-      error: (error) => {
-        this.state.setError(error.message);
-      },
-    });
+  constructor() {
+    this.store.loadQuestions();
   }
 }
