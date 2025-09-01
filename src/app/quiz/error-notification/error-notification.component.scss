@@ -1,0 +1,18 @@
+.error {
+  background-color: var(--white);
+  height: 300px;
+  text-align: center;
+}
+
+.error-title {
+  color: var(--white);
+  background-color: var(--red);
+  padding: 20px;
+  font-size: 36px;
+}
+
+.error-info {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+}

@@ -1,0 +1,49 @@
+:host {
+	width: 48%;
+	background-color: var(--white);
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+
+.answer {
+	display: flex;
+	min-height: 70px;
+	border: 2px solid var(--blue);
+}
+
+.answer-letter {
+	font-size: 30px;
+	background-color: var(--blue);
+	color: var(--white);
+	width: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.answer-text {
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.correct-answer {
+	border: 2px solid var(--green);
+}
+
+.correct-answer .answer-letter {
+	background-color: var(--green);
+}
+
+.wrong-answer {
+	border: 2px solid var(--red);
+}
+
+.wrong-answer .answer-letter {
+	background-color: var(--red);
+}
+
+.disabled-answer {
+	pointer-events: none;
+}

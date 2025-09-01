@@ -1,0 +1,8 @@
+<article>
+  <h4 class="question">{{ store.currentQuestion().question }}</h4>
+  <div class="answers">
+    @for (answer of store.currentQuestionAnswers(); track $index) {
+    <aq-answer [answer]="answer" [index]="$index" />
+    }
+  </div>
+</article>

@@ -1,0 +1,9 @@
+<div class="results">
+  <h3 class="congratulations">Поздравления!</h3>
+  <div class="results-info">
+    <div class="results-info-title">Вы успешно завершили игру!!</div>
+    <div class="">Вы правильно ответили на {{ store.correctAnswersCount() }} вопроса из {{ store.questionsCount() }}
+      вопросов.</div>
+  </div>
+  <div class="next-button" (click)="store.restart()">restart</div>
+</div>

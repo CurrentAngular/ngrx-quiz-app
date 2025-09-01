@@ -1,0 +1,20 @@
+<div class="quiz">
+  @if(state.error()) {
+  <aq-error-notification />
+  }
+
+  @if(store.showResult()) {
+  <aq-congratulations />
+  }
+
+  @if(store.questions().length > 0) {
+  <div>
+    <div class="score">Question {{ store.currentQuestionIndexToShow() }}/{{ store.questionsCount() }}</div>
+    <aq-question />
+
+    @if(store.currentAnswer()) {
+    <div class="next-button" (click)="store.nextQuestion()">Next question</div>
+    }
+  </div>
+  }
+</div>

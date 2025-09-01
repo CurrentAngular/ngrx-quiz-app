@@ -1,0 +1,36 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz {
+	width: 975px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.score {
+  @include flex-center;
+
+	background-color: var(--white);
+	color: var(--black);
+	font-size: 18px;
+	width: 200px;
+	margin: 0 auto;
+	font-weight: 600;
+	height: 40px;
+	margin-bottom: 30px;
+}
+
+.next-button {
+	margin: 0 auto;
+	color: var(--white);
+	background-color: var(--black);
+	width: 300px;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 14px 75px;
+	text-transform: uppercase;
+	text-align: center;
+}

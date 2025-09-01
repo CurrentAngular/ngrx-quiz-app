@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+	--blue: #0084da;
+	--green: #1ea55b;
+	--red: #dc0a0a;
+	--white: #fff;
+	--black: #0b0e21;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}

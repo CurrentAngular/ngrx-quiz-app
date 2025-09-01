@@ -1,0 +1,9 @@
+<div (click)="store.selectAnswer(answer())" [ngClass]="{
+    answer: true,
+    'correct-answer': isAnswerCorrect(),
+    'wrong-answer': isAnswerIncorrect(),
+    'disabled-answer': !!store.currentAnswer()
+  }">
+  <div class="answer-letter">{{ letter() }}</div>
+  <div class="answer-text">{{ answer() }}</div>
+</div>
